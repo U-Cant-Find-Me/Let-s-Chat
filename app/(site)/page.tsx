@@ -1,8 +1,13 @@
 import Image from "next/image";
 import AuthForm from "./components/AuthForm";
+import Head from "next/head";
 
 export default function Home() {
     return (
+        <>
+        <Head>
+            <link rel="icon" href="/images/favicon.png" />
+        </Head>
         <div className='flex min-h-full flex-col justify-center py-12 sm:px6
       lg:px-8 bg-gray-100'>
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -13,5 +18,6 @@ export default function Home() {
             </div>
             <AuthForm />
         </div>
+          </>
     )
 }

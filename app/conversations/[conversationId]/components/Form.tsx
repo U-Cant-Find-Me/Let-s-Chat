@@ -19,12 +19,20 @@ const Form = () => {
         })
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        setValue('message', '', { shouldValidate: true });
-        axios.post('/api/messages', {
-            ...data,
-            conversationId
-        })
+        // Check if data is effectively empty (contains only spaces or is null/undefined)
+        const isEmpty = Object.values(data).every(value => value === null || value === undefined || value.trim() === '');
+
+        if (isEmpty) {
+            // Handling the case where data is empty by blocking.
+        } else {
+            setValue('message', '', { shouldValidate: true });
+            axios.post('/api/messages', {
+                ...data,
+                conversationId
+            });
+        }
     };
+
 
     const handleUpload = (result: any) => {
         axios.post('/api/messages', {
