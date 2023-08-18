@@ -22,6 +22,6 @@ const getConversationById = async (
     } catch (error: any) {
         return null;
     }
-}
+};
 
 export default getConversationById;

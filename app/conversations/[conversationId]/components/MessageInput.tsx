@@ -1,6 +1,6 @@
 'use client';
 
-import { UseFormRegister, FieldValues } from "react-hook-form";
+import { UseFormRegister, FieldValues, FieldErrors } from "react-hook-form";
 
 interface MessageInputProps {
     placeholder?: string;
